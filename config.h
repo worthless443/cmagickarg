@@ -1,6 +1,6 @@
 #define _BLOCKED_CHARS "|() *&^%$#@!~"
 #define _SUP_STRING "bdev"
-#define _SUP_STRING_BODY "~acnfglk"
+#define _SUP_STRING_BODY "~acnfglkxy"
 #define _ARG_MAP(arg) (arg == 'e') ? OP_EDIT : (arg == '')
 // change this enum according to required parameters for the program
 enum OP {
@@ -16,10 +16,9 @@ enum OP {
 	OP_FIT,
 	OP_GAY,
 	OP_L,
-	OP_K
+	OP_K,
+	OP_X,
+	OP_Y
 };
 
-int PR_COMMAND = 0, PR_ADD = 0;
-int arr[10] = {0};
-int idx = 0;
-int ops[10] = {0};
+#define MAX_ARGN 20
