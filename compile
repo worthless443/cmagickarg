@@ -1,0 +1,2 @@
+#!/bin/bash
+gcc test.c $1 -ggdb -O3 -o example 
