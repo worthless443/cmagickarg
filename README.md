@@ -40,6 +40,7 @@ In the future, I emvision to port the entire mechanism as a macro (CPP).
 
 This parsing utility and library has number of problems associated with incompatiblity, misbehaviour and lastly a position-dependent argument passing mechanism. One thing to specifically note is that the named enum field and the macro strintg must align with each other, that means the entries for command line options must be layed out in order of either the named enum or the string which dictates how to interpret the position depenedent arugments.
 
+Of a desired behaviour not yet supported is error reporting if the passed arugment option and/or value is invalid or illigical.
 # Contributions 
 
 Concered with Limitations, feel free to contribute code in order to make the program and library interface better. 
