@@ -31,5 +31,15 @@ $ CC=gcc CXX=g++ make
 ./main -vy comm -z test -ggay
 ```
 
-## Disclaimer
-This is not ready to be used, not yet as of now. 
+# Future 
+As of commit c78811bfc8106dc3ee38982589902c683cefc000, postion independent argument passing convention has not been resolved, and therefore has not been posible at all. It does however support varidaic arguments which follos the similiar convention of right-to-left. 
+
+In the future, I emvision to port the entire mechanism as a macro (CPP).
+
+# Limitations
+
+This parsing utility and library has number of problems associated with incompatiblity, misbehaviour and lastly a position-dependent argument passing mechanism. One thing to specifically note is that the named enum field and the macro strintg must align with each other, that means the entries for command line options must be layed out in order of either the named enum or the string which dictates how to interpret the position depenedent arugments.
+
+# Contributions 
+
+Concered with Limitations, feel free to contribute code in order to make the program and library interface better. 
