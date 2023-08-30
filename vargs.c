@@ -6,10 +6,14 @@
 
 #include "config.h"
 
+extern void mergesort(int*,int);
+
 int PR_COMMAND = 0, PR_ADD = 0;
 int arr[15] = {0};
 int idx = 0;
 int ops[15] = {0};
+int og[20] = {3};
+int gidx = 0;
 
 
 int global_i;
@@ -58,6 +62,7 @@ void eval_arg_body_2(int *options,char **output, char **arg, int *i) {
 	char *_arg = arg[*i] + global_i;
 	int op_opt;
 	if(strlen(_arg) <= 0) _arg = arg[++*i];
+	printf("arg -- %s\n", _arg);
 
 	int _options[10] = {0};
 #ifndef MAX_ARGN 
@@ -69,12 +74,27 @@ void eval_arg_body_2(int *options,char **output, char **arg, int *i) {
 			_options[++j] = _i;
 		}
 	}
-	for(int _i = 0; _i < 5; ++_i)    
-		 op_opt = _options[1];
-	
-	//printf("%d\n",_options[op_opt]);
+	//mergesort(_options, j);
+	//for(int _i = 0;_options[_i];++_i) {
+	//	if(og[_i] != _options[_i]) 
+	//		op_opt = _options[_i];
+
+	//	printf("%d, %d\n", og[_i], _options[_i]);
+	//}
+	for(int _i = 0;_options[_i];++_i) {
+		if(_options[_i] != og[_i]) {
+			op_opt = _options[_i];
+			break;
+		}
+		printf("%d - %d\n", og[_i], _options[_i]);
+	}
+	memcpy(og, _options, 15);
+
+	//printf("%d\n", op_opt);
+
 	for(int _i=0;_i<j;++_i) {
 		if(options[op_opt] ) {
+			//printf("%d\n", op_opt);
 			if(strlen(_arg) > 1)  {
 				for(int j=0;j<strlen(_arg);++j) {
 					output[op_opt][j] = _arg[j];
