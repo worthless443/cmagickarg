@@ -62,7 +62,6 @@ void eval_arg_body_2(int *options,char **output, char **arg, int *i) {
 	char *_arg = arg[*i] + global_i;
 	int op_opt;
 	if(strlen(_arg) <= 0) _arg = arg[++*i];
-	printf("arg -- %s\n", _arg);
 
 	int _options[10] = {0};
 #ifndef MAX_ARGN 
@@ -74,24 +73,14 @@ void eval_arg_body_2(int *options,char **output, char **arg, int *i) {
 			_options[++j] = _i;
 		}
 	}
-	//mergesort(_options, j);
-	//for(int _i = 0;_options[_i];++_i) {
-	//	if(og[_i] != _options[_i]) 
-	//		op_opt = _options[_i];
-
-	//	printf("%d, %d\n", og[_i], _options[_i]);
-	//}
+	
 	for(int _i = 0;_options[_i];++_i) {
 		if(_options[_i] != og[_i]) {
 			op_opt = _options[_i];
 			break;
 		}
-		printf("%d - %d\n", og[_i], _options[_i]);
 	}
 	memcpy(og, _options, 15);
-
-	//printf("%d\n", op_opt);
-
 	for(int _i=0;_i<j;++_i) {
 		if(options[op_opt] ) {
 			//printf("%d\n", op_opt);
