@@ -28,7 +28,7 @@ if(ops[OP_Y]) {
 Now compile it all 
 ```
 $ CC=gcc CXX=g++ make 
-./main -vy comm -z test -ggay
+$ ./main -vy comm -z test -ggay
 ```
 
 # Future 

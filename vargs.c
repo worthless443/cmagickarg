@@ -58,7 +58,7 @@ int eval_arguments(char *raw_arg, int *output) {
 int ii = 0;
 
 void eval_arg_body_2(int *options,char **output, char **arg, int *i) {
-	int j = -1, ii = 1;
+	int j = -1;
 	char *_arg = arg[*i] + global_i;
 	int op_opt;
 	if(strlen(_arg) <= 0) _arg = arg[++*i];
@@ -79,11 +79,11 @@ void eval_arg_body_2(int *options,char **output, char **arg, int *i) {
 			op_opt = _options[_i];
 			break;
 		}
+		else op_opt = 0;
 	}
 	memcpy(og, _options, 15);
 	for(int _i=0;_i<j;++_i) {
 		if(options[op_opt] ) {
-			//printf("%d\n", op_opt);
 			if(strlen(_arg) > 1)  {
 				for(int j=0;j<strlen(_arg);++j) {
 					output[op_opt][j] = _arg[j];

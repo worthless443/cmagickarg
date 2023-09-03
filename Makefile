@@ -1,7 +1,8 @@
+CC=gcc
 OBJ=vargs.o sort.o
 LIB=libvargs.a
 MAIN=main
-FLAGS=-I./ -O3  -ggdb
+FLAGS=-I./ -O3  -ggdb -Wall 
 SRC_DIR=examples
 
 all: $(OBJ) $(LIB) $(MAIN)
@@ -13,4 +14,4 @@ $(MAIN): % : ${SRC_DIR}/%.c
 	$(CC) $^ $(LIB) ${FLAGS} -o $@
 	
 clean:
-	rm -rf *.o *.a main
+	rm -rf ${OBJ} ${LIB} ${MAIN}

@@ -8,10 +8,8 @@ extern int arr[15];
 extern int idx;
 extern int ops[15];
 
-
 int main(int argc, char **argv) {
 	memset(arr,'\0',10);
-	int op = 0;
 	char **op_strings =  get_op_strings(100);
 	
 	setup(ops,op_strings, argc,argv);
